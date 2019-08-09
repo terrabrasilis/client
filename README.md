@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
+## Configuring the environment variables
+
+```bash
+export NODE_ENV="development"
+export INPE_PROXY="http://terrabrasilis2.dpi.inpe.br:7000/cgi-bin/proxy.cgi?url="
+export TERRABRASILIS_MAPS_GWC="http://terrabrasilis.info/fip-service/gwc/service/wms"
+export TERRABRASILIS_MAPS_WMS="http://terrabrasilis.info/fip-service/wms"
+export FIPCERRADO_OPERACAO="http://fipcerrado.dpi.inpe.br:8080/fipcerrado-geoserver/terraamazon/wms"
+export PROXY_OGC="http://terrabrasilis.dpi.inpe.br/proxy?url="; 
+export DASHBOARD_API_HOST="http://terrabrasilis.dpi.inpe.br/dashboard/api/v1/redis-cli/"
+export TERRABRASILIS_API_HOST="http://terrabrasilis.dpi.inpe.br/terrabrasilis/api/v1/"
+export TERRABRASILIS_BUSINESS_API_HOST="http://terrabrasilis.dpi.inpe.br/business/api/v1/"
+```
+
 ## Clone and install the dependencies
 
 To clone this project, execute: 

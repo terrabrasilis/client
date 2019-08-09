@@ -1,17 +1,20 @@
 /**
  * This class is responsible to store all global variables to use in entire application and not duplicate code
  */
+
+const {get} = require('lodash')
+
 export class Constants {
     public static get TERRABRASILIS_MAPS_GWC(): string { 
-        return "http://terrabrasilis.info/fip-service/gwc/service/wms"; 
+        return process.env.TERRABRASILIS_MAPS_GWC 
     };
 
     public static get TERRABRASILIS_MAPS_WMS(): string { 
-        return "http://terrabrasilis.info/fip-service/wms"; 
+        return process.env.TERRABRASILIS_MAPS_WMS 
     };
 
     public static get FIPCERRADO_OPERACAO(): string { 
-        return "http://fipcerrado.dpi.inpe.br:8080/fipcerrado-geoserver/terraamazon/wms"; 
+        return process.env.FIPCERRADO_OPERACAO 
     };
 
     public static get FEATURE_INFO_PARAMS(): string {
@@ -36,11 +39,11 @@ export class Constants {
     }
 
     public static get PROXY_OGC(): string { 
-        return "http://terrabrasilis.dpi.inpe.br/proxy?url="; 
+        return process.env.PROXY_OGC
     };
 
     public static get DASHBOARD_API_HOST(): string {
-        return "http://terrabrasilis.dpi.inpe.br/dashboard/api/v1/redis-cli/";
+        return process.env.DASHBOARD_API_HOST 
     };
 
     public static get DASHBOARD_BIOMES_COLORS(): string[] {
@@ -68,7 +71,7 @@ export class Constants {
     }
 
     public static get TERRABRASILIS_API_HOST(): string {
-        return "http://terrabrasilis.dpi.inpe.br/terrabrasilis/api/v1/";
+        return process.env.TERRABRASILIS_API_HOST 
     };    
 
     public static get MAP_LEGEND_GRADES(): number {
@@ -88,6 +91,6 @@ export class Constants {
     };  
     
     public static get TERRABRASILIS_BUSINESS_API_HOST(): string {
-        return (process.env.ENV == 'production')?("http://terrabrasilis.dpi.inpe.br/business/api/v1/"):("http://terrabrasilis.dpi.inpe.br/business/api/v1/");
+        return process.env.TERRABRASILIS_BUSINESS_API_HOST 
     };
 }
