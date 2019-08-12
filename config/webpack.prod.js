@@ -8,6 +8,16 @@ const helpers = require('./helpers');
 //const path = require('path');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+const envData = {
+    ENV,
+    NODE_ENV: JSON.stringify(get(process, 'env.NODE_ENV', '')),
+    INPE_PROXY: JSON.stringify(get(process, 'env.INPE_PROXY', '')),
+    FIPCERRADO_OPERACAO: JSON.stringify(get(process, 'env.FIPCERRADO_OPERACAO', '')),
+    PROXY_OGC: JSON.stringify(get(process, 'env.PROXY_OGC', '')),
+    DASHBOARD_API_HOST: JSON.stringify(get(process, 'env.DASHBOARD_API_HOST', '')),
+    TERRABRASILIS_API_HOST: JSON.stringify(get(process, 'env.TERRABRASILIS_API_HOST', '')),
+    TERRABRASILIS_BUSINESS_API_HOST: JSON.stringify(get(process, 'env.TERRABRASILIS_BUSINESS_API_HOST', ''))
+}
 
 console.log("@@@@@@@@ PRODUCTION ENVIRONMENT STARTED @@@@@@@@");
 
@@ -49,9 +59,7 @@ module.exports = webpackMerge(commonConfig, {
     new ExtractTextPlugin('[name].[hash].css'),
 
     new webpack.DefinePlugin({
-      'process.env': {
-        'ENV': JSON.stringify(ENV)
-      }
+      'process.env': envData
     }),
 
     new HtmlWebpackPlugin({
