@@ -1,16 +1,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "target": "es5",
+    "target": "es2015",
     "lib": [
       "es2017",
       "dom"
